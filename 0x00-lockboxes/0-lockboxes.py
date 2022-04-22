@@ -1,4 +1,11 @@
+#!/usr/bin/python3
+"""
+method that determines if all the boxes can be opened
+"""
+
+
 def join(T, R):
+    """Join"""
     res = []
     for e in R:
         res += T[e]
@@ -6,6 +13,7 @@ def join(T, R):
 
 
 def canUnlockAll(boxes):
+    """method that determines if all the boxes can be opened"""
     index = 0
     total = list(set(boxes[0]) | {0})
     added = True
