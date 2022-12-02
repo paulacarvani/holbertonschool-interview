@@ -3,10 +3,11 @@
 Given a list of non-negative integers representing walls of width 1.
 """
 
+
 def rain(walls):
     """Given a list of non-negative integers representing walls of width 1."""
     if (len(walls) <= 2):
-        return(0)
+        return (0)
 
     water = 0
 
