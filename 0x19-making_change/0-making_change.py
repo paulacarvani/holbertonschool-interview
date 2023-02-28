@@ -6,20 +6,18 @@ Given a pile of coins of different values.
 
 def makeChange(coins, total):
     """Given a pile of coins of different values."""
-    if total == 0:
+
+    number_coins = 0
+    cents = 0
+    if total <= 0:
         return 0
 
-    value = len(coins) - 1
-    num_coins = 0
-    coins.sort()
+    coins = sorted(coins, reverse=True)
 
-    while total > 0:
-        while coins[value] > total and value >= 0:
-            value -= 1
-        total -= coins[value]
-        num_coins += 1
-
-    if all(total % coin != 0 for coin in coins):
-        return -1
-
-    return num_coins
+    for coin in coins:
+        while cents + coin <= total:
+            cents += coin
+            number_coins += 1
+        if cents == total:
+            return number_coins
+    return -1
